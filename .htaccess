@@ -1,0 +1,26 @@
+# XP Negocio 2026 · Apache
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "no-referrer"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Bloquea el acceso web a los datos y respaldos
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^data/ - [F,L]
+</IfModule>
+
+<FilesMatch "^(app-data\.json|.*\.tmp)$">
+  Require all denied
+</FilesMatch>
+
+# Cache de recursos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>

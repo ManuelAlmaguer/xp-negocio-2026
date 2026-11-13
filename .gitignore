@@ -1,0 +1,14 @@
+# Datos personales del negocio: no se versionan
+data/*.json
+data/*.tmp
+data/backups/*.json
+
+# Mantener las carpetas
+!data/.gitkeep
+!data/backups/.gitkeep
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+node_modules/

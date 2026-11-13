@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1878cc"/>
+      <stop offset=".28" stop-color="#4aa8ea"/>
+      <stop offset=".58" stop-color="#8fd2f6"/>
+      <stop offset=".82" stop-color="#c8ebfd"/>
+      <stop offset="1" stop-color="#e8f8ff"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fffdf0" stop-opacity=".95"/>
+      <stop offset=".3" stop-color="#fff6cf" stop-opacity=".55"/>
+      <stop offset=".65" stop-color="#fff3c4" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#fff3c4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="farHill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9e2b4"/>
+      <stop offset=".5" stop-color="#83c48c"/>
+      <stop offset="1" stop-color="#4f9668"/>
+    </linearGradient>
+    <linearGradient id="hillMain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2ee8c"/>
+      <stop offset=".18" stop-color="#93da5f"/>
+      <stop offset=".45" stop-color="#65bd45"/>
+      <stop offset=".75" stop-color="#3f9c33"/>
+      <stop offset="1" stop-color="#2a7024"/>
+    </linearGradient>
+    <linearGradient id="hillRight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8f5a4"/>
+      <stop offset=".35" stop-color="#93da5f"/>
+      <stop offset=".7" stop-color="#4fae3b"/>
+      <stop offset="1" stop-color="#2f8329"/>
+    </linearGradient>
+    <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a7e372"/>
+      <stop offset=".4" stop-color="#5cb63f"/>
+      <stop offset="1" stop-color="#266a22"/>
+    </linearGradient>
+    <linearGradient id="crestLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4ffd0" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#d8ff9e" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="cloudBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="cloudBlur2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="grassBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <radialGradient id="vignette" cx="50%" cy="42%" r="72%">
+      <stop offset=".55" stop-color="#05264a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#05264a" stop-opacity=".26"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <ellipse cx="1210" cy="150" rx="520" ry="360" fill="url(#sunGlow)"/>
+  <ellipse cx="1180" cy="128" rx="70" ry="62" fill="#fffdf0" opacity=".55" filter="url(#softBlur)"/>
+
+  <!-- Nubes -->
+  <g filter="url(#cloudBlur)" fill="#ffffff">
+    <ellipse cx="250" cy="150" rx="150" ry="46" opacity=".85"/>
+    <ellipse cx="330" cy="122" rx="96" ry="42" opacity=".8"/>
+    <ellipse cx="176" cy="132" rx="76" ry="34" opacity=".7"/>
+    <ellipse cx="620" cy="238" rx="130" ry="34" opacity=".6"/>
+    <ellipse cx="700" cy="222" rx="80" ry="26" opacity=".5"/>
+    <ellipse cx="1400" cy="300" rx="160" ry="34" opacity=".5"/>
+    <ellipse cx="1330" cy="286" rx="90" ry="26" opacity=".42"/>
+    <ellipse cx="1010" cy="330" rx="120" ry="26" opacity=".35"/>
+  </g>
+  <g fill="#ffffff" opacity=".55" filter="url(#cloudBlur2)">
+    <ellipse cx="232" cy="136" rx="86" ry="22"/>
+    <ellipse cx="300" cy="118" rx="52" ry="18"/>
+    <ellipse cx="646" cy="230" rx="62" ry="12"/>
+    <ellipse cx="1420" cy="294" rx="70" ry="10"/>
+  </g>
+
+  <!-- Colinas lejanas -->
+  <path d="M0,596 C180,548 360,568 540,566 C760,564 960,512 1180,500 C1360,490 1500,506 1600,520 L1600,900 L0,900 Z" fill="url(#farHill)" opacity=".75"/>
+  <path d="M0,626 C220,586 420,612 640,606 C880,600 1060,548 1280,544 C1400,542 1520,552 1600,562 L1600,900 L0,900 Z" fill="#6fb578" opacity=".55"/>
+
+  <!-- Colina principal (derecha, iluminada) -->
+  <path d="M520,900 C640,790 780,700 960,662 C1140,624 1320,640 1600,690 L1600,900 Z" fill="url(#hillRight)"/>
+  <path d="M520,900 C660,796 800,712 980,674 C1120,646 1270,652 1440,682" fill="none" stroke="url(#crestLight)" stroke-width="16" opacity=".55" filter="url(#grassBlur)"/>
+
+  <!-- Colina central -->
+  <path d="M0,900 L0,690 C170,648 340,664 520,712 C700,760 840,812 930,900 Z" fill="url(#hillMain)"/>
+  <path d="M0,690 C170,648 340,664 520,712 C610,736 690,770 760,812" fill="none" stroke="#eaffbe" stroke-width="9" opacity=".5" filter="url(#grassBlur)"/>
+
+  <!-- Colina frontal -->
+  <path d="M0,900 L0,802 C190,762 380,806 540,860 C610,884 660,896 700,900 Z" fill="url(#hillFront)"/>
+  <path d="M0,802 C190,762 380,806 540,860" fill="none" stroke="#d6ff9e" stroke-width="7" opacity=".45" filter="url(#grassBlur)"/>
+
+  <!-- Sombra suave en el valle -->
+  <ellipse cx="360" cy="860" rx="430" ry="150" fill="#1d5a1c" opacity=".22" filter="url(#softBlur)"/>
+  <ellipse cx="1250" cy="820" rx="360" ry="130" fill="#c9f28f" opacity=".18" filter="url(#softBlur)"/>
+
+  <!-- Textura de hierba -->
+  <g stroke="#ffffff" stroke-opacity=".12" stroke-width="2" stroke-linecap="round">
+    <path d="M120,846 l6,-16M150,852 l4,-14M182,860 l6,-15M214,868 l4,-13M250,876 l6,-16M286,884 l4,-14M330,890 l6,-16M368,896 l4,-12"/>
+    <path d="M760,830 l6,-16M796,842 l4,-14M830,854 l6,-15M866,866 l4,-13M902,878 l6,-16M940,888 l4,-14"/>
+    <path d="M1180,790 l6,-15M1214,800 l4,-13M1248,810 l6,-15M1284,820 l4,-13M1320,830 l6,-16"/>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+</svg>
